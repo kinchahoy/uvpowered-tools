@@ -21,17 +21,6 @@ Each script is a standalone Python file that uses the ```#!/usr/bin/env -S uv â€
 
 ## List of uv powered tools (may not be complete)
 
-#### Temporary first-pass LiteLLM inventory: inventory_litellm.sh
-
-Scans likely local Python environment locations and reports any LiteLLM versions it can identify by reading environment files from an isolated `uv`-managed Python 3.12 process.
-
-This script exists as a temporary first-pass helper for the LiteLLM package incident discussed at [Hacker News](https://news.ycombinator.com/item?id=47501729).
-It does not execute discovered Python interpreters while inspecting them, because the risk being investigated may involve Python startup behavior.
-
-Do not treat its output as a definitive or trusted compromise assessment.
-If it reports nothing, that does not prove you are safe.
-If it reports a version, that does not by itself prove the environment is clean or compromised.
-
 #### LLM token counter: count-tokens.py
 
 Loads a HuggingFace tokenizer for an LLM model and tokenizes a given file.
