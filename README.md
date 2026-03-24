@@ -1,11 +1,17 @@
+
+----
+
+## 2026-03-24: SHORT TERM HELPER FOR LITELLM ISSUE (sh script not python)
+`inventory_litellm.sh` is a temporary quick script for a first-pass local check related to the LiteLLM package vulerability discussed at [Hacker News](https://news.ycombinator.com/item?id=47501729).
+It is intended only to help you quickly gauge whether that issue might not be impacting you.
+Its LiteLLM version inventory is a quick first pass and should not be considered definitive, authoritative, or trusted for security decisions. v1.82.7, v1.82.8 are known bad.
+
+----
+
 # uvpowered-tools
 
 Minimal command-line tools implemented as executable uv-powered Python scripts.
 Each script is a standalone Python file that uses the ```#!/usr/bin/env -S uv …``` shebang to spin up a cached environment with the correct package versions. No building, compiling, or installing packages into your system.
-
-`inventory_litellm.sh` is a temporary quick script for a first-pass local check related to the LiteLLM package incident discussed at [Hacker News](https://news.ycombinator.com/item?id=47501729).
-It is intended only to help you quickly gauge whether that issue might not be impacting you.
-Its LiteLLM version inventory is a quick first pass and should not be considered definitive, authoritative, or trusted for security decisions.
 
 - Zero overhead to run (no virtualenv setup, no pip installs)
 
@@ -13,9 +19,7 @@ Its LiteLLM version inventory is a quick first pass and should not be considered
 
 - Easy to modify as small, readable Python scripts
 
-All tooling is powered by uv, which resolves and caches Python dependencies automatically at runtime.
-
-## List of tools (may not be complete)
+## List of uv powered tools (may not be complete)
 
 #### Temporary first-pass LiteLLM inventory: inventory_litellm.sh
 
