@@ -3,6 +3,10 @@
 Minimal command-line tools implemented as executable uv-powered Python scripts.
 Each script is a standalone Python file that uses the ```#!/usr/bin/env -S uv â€¦``` shebang to spin up a cached environment with the correct package versions. No building, compiling, or installing packages into your system.
 
+`inventory_litellm.sh` is a temporary quick script for a first-pass local check related to the LiteLLM package incident discussed at [Hacker News](https://news.ycombinator.com/item?id=47501729).
+It is intended only to help you quickly gauge whether that issue might not be impacting you.
+Its LiteLLM version inventory is a quick first pass and should not be considered definitive, authoritative, or trusted for security decisions.
+
 - Zero overhead to run (no virtualenv setup, no pip installs)
 
 - Fully standalone and directly executable
@@ -12,6 +16,17 @@ Each script is a standalone Python file that uses the ```#!/usr/bin/env -S uv â€
 All tooling is powered by uv, which resolves and caches Python dependencies automatically at runtime.
 
 ## List of tools (may not be complete)
+
+#### Temporary first-pass LiteLLM inventory: inventory_litellm.sh
+
+Scans likely local Python environment locations and reports any LiteLLM versions it can identify by reading environment files from an isolated `uv`-managed Python 3.12 process.
+
+This script exists as a temporary first-pass helper for the LiteLLM package incident discussed at [Hacker News](https://news.ycombinator.com/item?id=47501729).
+It does not execute discovered Python interpreters while inspecting them, because the risk being investigated may involve Python startup behavior.
+
+Do not treat its output as a definitive or trusted compromise assessment.
+If it reports nothing, that does not prove you are safe.
+If it reports a version, that does not by itself prove the environment is clean or compromised.
 
 #### LLM token counter: count-tokens.py
 
@@ -81,6 +96,10 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 or
 
 ./GENERIC-SCRIPT-TEMPLATE.py
+
+or
+
+./inventory_litellm.sh
 ```
 ### Notes
 
